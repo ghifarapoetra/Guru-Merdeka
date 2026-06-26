@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Dashboard — Guru Merdeka</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232D5016'/><text x='50' y='68' font-family='Georgia' font-size='42' font-weight='bold' fill='white' text-anchor='middle'>GM</text></svg>" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="./css/style.css" />
+</head>
+<body>
+<div class="app-layout">
+
+  <!-- Sidebar overlay (mobile) -->
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <!-- ── SIDEBAR ── -->
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="./dashboard.html" class="sidebar-logo">
+        <span class="sidebar-logo-icon">GM</span>
+        <span>
+          <span class="sidebar-logo-text">Guru Merdeka</span>
+          <span class="sidebar-logo-sub">Panduan Berkarya & Berpenghasilan</span>
+        </span>
+      </a>
+    </div>
+
+    <div class="sidebar-progress-row">
+      <div class="sidebar-progress-bar">
+        <div class="sidebar-progress-fill" id="sidebarProgressFill"></div>
+      </div>
+      <span class="sidebar-progress-text" id="sidebarProgressText">0/8</span>
+    </div>
+
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+
+    <div class="sidebar-footer">
+      <button class="btn-dark-mode" id="darkModeToggle">🌙 Gelap</button>
+      <button class="btn-logout" id="logoutBtn">Keluar</button>
+    </div>
+  </aside>
+
+  <!-- ── MAIN ── -->
+  <main class="main-content">
+
+    <!-- Mobile header -->
+    <header class="mobile-header">
+      <a href="./dashboard.html" class="mobile-logo">
+        <span style="width:28px;height:28px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-weight:700;font-size:12px;flex-shrink:0;">GM</span>
+        Guru Merdeka
+      </a>
+      <button class="hamburger-btn" id="sidebarToggle" aria-label="Buka menu">
+        <span></span><span></span><span></span>
+      </button>
+    </header>
+
+    <!-- Hero section -->
+    <div class="dashboard-hero">
+      <h1 class="dash-greeting">Selamat datang, Guru Merdeka ✦</h1>
+      <p class="dash-tagline">Perjalananmu dimulai dari sini. Satu chapter sehari, satu langkah lebih dekat.</p>
+
+      <div class="dash-progress-card">
+        <div class="progress-circle-wrap">
+          <svg viewBox="0 0 58 58">
+            <defs>
+              <linearGradient id="pg" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0%" stop-color="#2D5016"/>
+                <stop offset="100%" stop-color="#8B6914"/>
+              </linearGradient>
+            </defs>
+            <circle class="pc-bg"   cx="29" cy="29" r="23"/>
+            <circle class="pc-fill" cx="29" cy="29" r="23" id="progressCircleFill"
+              stroke="url(#pg)"
+              stroke-dasharray="144.51"
+              stroke-dashoffset="144.51"/>
+          </svg>
+        </div>
+        <div class="progress-text-wrap">
+          <div class="progress-count-big" id="progressCountText">0 / 8</div>
+          <div class="progress-label-sm">chapter telah kamu selesaikan</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="dashboard-body">
+
+      <!-- Daily Quote -->
+      <div class="daily-quote-card">
+        <p class="dq-label">Renungan Hari Ini</p>
+        <p class="dq-text" id="dailyQuoteText"></p>
+        <p class="dq-source" id="dailyQuoteSource"></p>
+      </div>
+
+      <h2 class="section-heading">Daftar Chapter</h2>
+      <div class="chapter-grid" id="chapterGrid"></div>
+
+    </div>
+  </main>
+</div>
+
+<script src="./js/config.js"></script>
+<script src="./js/app.js"></script>
+<script>initDashboard();</script>
+</body>
+</html>

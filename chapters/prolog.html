@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Prolog — Guru Merdeka</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232D5016'/><text x='50' y='68' font-family='Georgia' font-size='42' font-weight='bold' fill='white' text-anchor='middle'>GM</text></svg>" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+</head>
+<body>
+<div class="reading-progress"></div>
+<div class="app-layout">
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="../dashboard.html" class="sidebar-logo">
+        <span class="sidebar-logo-icon">GM</span>
+        <span>
+          <span class="sidebar-logo-text">Guru Merdeka</span>
+          <span class="sidebar-logo-sub">Panduan Berkarya & Berpenghasilan</span>
+        </span>
+      </a>
+    </div>
+    <div class="sidebar-progress-row">
+      <div class="sidebar-progress-bar"><div class="sidebar-progress-fill" id="sidebarProgressFill"></div></div>
+      <span class="sidebar-progress-text" id="sidebarProgressText">0/8</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <button class="btn-dark-mode" id="darkModeToggle">🌙 Gelap</button>
+      <button class="btn-logout" id="logoutBtn">Keluar</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="mobile-header">
+      <a href="../dashboard.html" class="mobile-logo">
+        <span style="width:28px;height:28px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-weight:700;font-size:12px;flex-shrink:0;">GM</span>
+        Guru Merdeka
+      </a>
+      <button class="hamburger-btn" id="sidebarToggle"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Chapter header -->
+    <div class="chapter-header">
+      <svg class="chapter-ornament" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <circle cx="22" cy="22" r="20" stroke="#C4A882" stroke-width="1" fill="none" stroke-dasharray="2 4"/>
+        <path d="M22 10 L24.5 17h7.5L26 21.5 28.5 29 22 24.5 15.5 29 18 21.5 12 17h7.5Z" fill="#2D5016" opacity="0.2"/>
+        <circle cx="22" cy="22" r="4" fill="#8B6914" opacity="0.3"/>
+      </svg>
+      <p class="chapter-number">Prolog</p>
+      <h1 class="chapter-title">Dari Tanggal 25 ke Tanggal 25</h1>
+      <div class="chapter-meta">
+        <span class="chapter-meta-item">⏱ Estimasi baca: 10 menit</span>
+        <span class="chapter-meta-item">📖 Pengantar</span>
+      </div>
+    </div>
+
+    <!-- Chapter body -->
+    <div class="chapter-body">
+      <div class="content-wrap">
+
+        <p>Masih ingat betul rasanya.</p>
+
+        <p>Tiga hari setelah gajian. Belanja kebutuhan rumah, sisihkan SPP anak, tunaikan beberapa amanah yang sudah menunggu. Dan tiba-tiba — habis.</p>
+
+        <p>Bukan habis karena boros. Bukan habis karena tidak bersyukur. Tapi habis karena memang segitu yang ada.</p>
+
+        <p>Lalu muncul pertanyaan yang tidak keras, tapi menghantam pelan-pelan:</p>
+
+        <div class="highlight-text">"27 hari ke depan, gimana?"</div>
+
+        <p>Kalau kamu pernah merasakan hal yang sama, kamu tahu bahwa itu bukan sekadar pertanyaan soal uang. Itu pertanyaan tentang harga diri. Tentang amanah. Tentang seberapa jauh kita bisa melindungi orang-orang yang kita cintai.</p>
+
+        <div class="ornament-divider"></div>
+
+        <h2>Ketika Negeri Ini Pernah Memuliakan Gurunya</h2>
+
+        <p>Sebelum kita bicara soal hari ini, mari sejenak menoleh ke belakang — jauh ke belakang.</p>
+
+        <p>Di masa Dinasti Abbasiyah, di bawah kepemimpinan Harun Ar-Rasyid (786–809 M), Baghdad bukan hanya pusat pemerintahan. Ia adalah jantung peradaban dunia. Dan di jantung peradaban itu, guru ditempatkan di posisi yang tidak main-main.</p>
+
+        <p>Abu Yusuf al-Qadi, seorang ulama dan ahli hukum Islam yang menjadi hakim agung sekaligus mentor kerajaan, mendapat gaji yang oleh standar zaman itu setara dengan pejabat tinggi istana. Bukan sekadar diberi makan — ia diberi <em>penghargaan</em>. Rumah yang layak, fasilitas untuk meneliti, dan jaminan bahwa pikirannya bisa bergerak bebas tanpa dihantui kebutuhan dasar.</p>
+
+        <p>Di era yang sama, Bayt al-Hikmah — perpustakaan dan lembaga riset terbesar dunia saat itu — menggaji para penerjemah, ilmuwan, dan pengajarnya dengan upah yang menggiurkan bahkan untuk ukuran hari ini. Satu naskah yang berhasil diterjemahkan bisa dibayar setara beratnya dengan emas.</p>
+
+        <p>Dinasti Umayyah bahkan punya kebijakan yang lebih tegas: guru-guru di <em>kuttab</em> (sekolah dasar Islam) dibebaskan dari kewajiban pajak. Negara secara eksplisit berkata: <em>kontribusimu terlalu besar untuk dibebankan biaya tambahan</em>.</p>
+
+        <p>Mengapa mereka begitu serius? Karena mereka paham — peradaban tidak dibangun oleh tentara. Peradaban dibangun oleh <strong>orang-orang yang mengerti cara mentransfer pengetahuan</strong>. Dan itu adalah pekerjaan guru.</p>
+
+        <div class="callout tip">
+          <p class="callout-label">Catatan Sejarah</p>
+          <p>Ibn Khaldun dalam <em>Muqaddimah</em>-nya menulis: "Mengajar adalah sebuah seni, dan seni yang dikuasai dengan baik layak mendapat penghargaan tertinggi." Ia tidak hanya menulis itu — ia hidup dari mengajarnya.</p>
+        </div>
+
+        <h2>Dan Hari Ini…</h2>
+
+        <p>Ironinya terasa seperti tampar pelan tapi berulang.</p>
+
+        <p>Berdasarkan data Kemendikbud, ratusan ribu guru honorer di Indonesia menerima gaji di bawah Rp500.000 per bulan. Di beberapa daerah terpencil, angkanya bahkan lebih rendah — Rp200.000 hingga Rp300.000 untuk sebulan penuh mengajar.</p>
+
+        <p>Mereka bukan guru yang malas. Bukan guru yang tidak kompeten. Mereka adalah guru yang datang pagi, pulang sore, mengoreksi tugas malam hari, dan tetap hadir esok paginya — meskipun dompetnya menipis.</p>
+
+        <p>Dan mungkin, jika kamu sedang membaca ini, kamu salah satu dari mereka. Atau pernah menjadi mereka. Atau mengenal mereka dengan sangat dekat.</p>
+
+        <p>Bukan karena kita tidak berusaha. Bukan karena kita tidak berdoa. Tapi karena sistemnya memang belum adil — dan kita tidak bisa menunggu sistem berubah sebelum anak kita bisa makan.</p>
+
+        <div class="ornament-divider"></div>
+
+        <div class="quote-box">
+          <p class="quote-arabic">وَمَن يَتَّقِ اللَّهَ يَجْعَل لَّهُ مَخْرَجًا وَيَرْزُقْهُ مِنْ حَيْثُ لَا يَحْتَسِبُ</p>
+          <p class="quote-translation">"Barangsiapa bertakwa kepada Allah, niscaya Dia akan membukakan jalan keluar baginya, dan memberinya rezeki dari arah yang tidak disangka-sangka."</p>
+          <p class="quote-source">QS. At-Talaq: 2–3</p>
+        </div>
+
+        <p>Tapi di sinilah saya mulai bertanya pada diri sendiri dengan lebih jujur: apakah cukup hanya menunggu dari tanggal ke tanggal? Apakah tawakkal berarti diam?</p>
+
+        <p>Tidak.</p>
+
+        <p>Tawakkal yang sesungguhnya berdiri di atas ikhtiar yang maksimal. Kita ikat unta kita dulu — baru kita serahkan kepada Allah.</p>
+
+        <p>Dan saya sadar: saya punya sesuatu yang selama ini hanya saya simpan di kepala, di papan tulis, di ruang kelas — tapi tidak pernah saya ubah menjadi sesuatu yang lebih luas manfaatnya.</p>
+
+        <p>Saya punya <strong>skill</strong>. Kamu juga punya.</p>
+
+        <p>Bukan skill biasa. Skill yang lahir dari jam terbang, dari kesabaran menghadapi murid yang belum paham, dari kemampuan menjelaskan hal rumit menjadi sederhana — itu skill yang dicari orang banyak.</p>
+
+        <div class="ornament-divider"></div>
+
+        <h2>Tentang Buku Ini</h2>
+
+        <p>Buku ini bukan tentang cara cepat kaya. Bukan tentang meninggalkan profesi mulia kita sebagai guru. Ini tentang bagaimana kita — sebagai guru, sebagai Muslim — bisa berdiri lebih tegak secara finansial, tanpa kehilangan arah, tanpa menggadaikan nilai.</p>
+
+        <p>Kita akan mulai dari dalam dulu. Dari niat. Dari tauhid. Dari mengenal diri sendiri dengan lebih jujur.</p>
+
+        <p>Karena guru yang kuat bukan hanya yang pandai mengajar — tetapi yang hidupnya menjadi bukti dari apa yang ia ajarkan.</p>
+
+        <div class="hadis-box">
+          <p class="hadis-arabic">إِنَّمَا الْأَعْمَالُ بِالنِّيَّاتِ وَإِنَّمَا لِكُلِّ امْرِئٍ مَا نَوَى</p>
+          <p class="hadis-translation">"Sesungguhnya setiap amalan itu tergantung niatnya. Dan setiap orang hanya mendapatkan apa yang ia niatkan."</p>
+          <p class="hadis-source">HR. Bukhari & Muslim</p>
+        </div>
+
+        <p>Bismillah. Mari kita mulai.</p>
+
+        <!-- Checklist -->
+        <div class="checklist">
+          <p class="checklist-title">Sebelum Lanjut</p>
+          <div class="checklist-item">
+            <input type="checkbox" id="c_prolog_1" data-ckey="prolog_1" />
+            <label for="c_prolog_1">Saya sudah membaca Prolog sampai selesai</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="c_prolog_2" data-ckey="prolog_2" />
+            <label for="c_prolog_2">Saya memahami tujuan buku ini</label>
+          </div>
+          <div class="checklist-item">
+            <input type="checkbox" id="c_prolog_3" data-ckey="prolog_3" />
+            <label for="c_prolog_3">Saya siap memulai perjalanan dengan niat yang jelas</label>
+          </div>
+        </div>
+
+        <!-- Reflection -->
+        <div class="reflection-box">
+          <div class="reflection-header">
+            <div class="reflection-icon">✍</div>
+            <div>
+              <div class="reflection-title">Refleksi Prolog</div>
+              <div class="reflection-subtitle">Tuliskan jawabanmu — tersimpan otomatis di browser</div>
+            </div>
+          </div>
+          <div class="reflection-item">
+            <p class="reflection-question">Apa yang membuatmu memutuskan untuk membuka buku ini hari ini?</p>
+            <textarea class="reflection-textarea" data-rkey="prolog_q1" placeholder="Tulis di sini…"></textarea>
+            <div class="save-indicator">✓ Tersimpan</div>
+          </div>
+          <div class="reflection-item">
+            <p class="reflection-question">Apa satu hal yang paling ingin kamu dapatkan dari perjalanan ini?</p>
+            <textarea class="reflection-textarea" data-rkey="prolog_q2" placeholder="Tulis di sini…"></textarea>
+            <div class="save-indicator">✓ Tersimpan</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="chapter-footer">
+      <div class="content-wrap">
+        <button class="complete-btn" id="markCompleteBtn">Tandai Prolog Selesai ✓</button>
+        <div class="chapter-nav">
+          <span class="chapter-nav-btn disabled">
+            <span class="nav-dir-label">← Sebelumnya</span>
+            <span class="nav-chapter-title">Ini halaman pertama</span>
+          </span>
+          <a href="./chapter-1.html" class="chapter-nav-btn dir-next">
+            <span class="nav-dir-label">Selanjutnya →</span>
+            <span class="nav-chapter-title">Chapter 1: Sebelum Berkarya, Luruskan Niat</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+  </main>
+</div>
+
+<!-- Completion overlay -->
+<div class="completion-overlay" id="completionOverlay">
+  <div class="completion-card">
+    <div class="completion-icon">✓</div>
+    <h2 class="completion-title">Alhamdulillah!</h2>
+    <p class="completion-text">Prolog selesai. Kamu sudah tahu ke mana perjalanan ini menuju. Sekarang, mari mulai dari fondasi yang paling penting.</p>
+    <div class="completion-actions">
+      <a href="./chapter-1.html" class="btn-next-chapter">Lanjut ke Chapter 1 →</a>
+      <button class="btn-close-overlay" data-close-overlay>Tetap di halaman ini</button>
+    </div>
+  </div>
+</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/app.js"></script>
+<script>initChapter('prolog');</script>
+</body>
+</html>
