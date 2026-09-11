@@ -10,6 +10,9 @@ const GM_CONFIG = {
     { id: 'ch5',       label: 'Chapter 5',  title: 'Jual Tanpa Malu, Bantu Tanpa Ragu', time: '20 menit', file: 'chapter-5.html' },
     { id: 'ch6',       label: 'Chapter 6',  title: 'Jangan Berhenti di Sini',            time: '25 menit', file: 'chapter-6.html' },
     { id: 'epilog',    label: 'Epilog',     title: 'Ikhtiar 100%, Tawakkal 1000%',       time: '10 menit', file: 'epilog.html'    },
+
+    // ── BONUS — hanya terbuka setelah epilog selesai ──
+    { id: 'blueprint', label: '✦ Blueprint', title: 'Blueprint Produk Digital',          time: 'Panduan eksekusi', file: 'chapters/blueprint.html', bonus: true },
   ],
 
   quotes: [
