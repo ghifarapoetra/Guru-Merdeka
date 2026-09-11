@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="id" data-theme="light">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Blueprint Produk Digital — Guru Merdeka</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='20' fill='%232D5016'/><text x='50' y='68' font-family='Georgia' font-size='42' font-weight='bold' fill='white' text-anchor='middle'>GM</text></svg>" type="image/svg+xml" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&family=Amiri:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/style.css" />
+
+  <style>
+    /* ── Blueprint tambahan — di atas style.css GM ── */
+
+    .bp-tabs {
+      display: flex;
+      gap: 6px;
+      flex-wrap: wrap;
+      margin-bottom: 1.5rem;
+    }
+    .bp-tab {
+      padding: 5px 14px;
+      font-size: 12px;
+      font-family: var(--font-body);
+      font-weight: 500;
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      cursor: pointer;
+      background: transparent;
+      color: var(--text-muted);
+      transition: all .15s;
+    }
+    .bp-tab:hover { border-color: var(--primary); color: var(--primary); }
+    .bp-tab.active { background: var(--primary); color: #fff; border-color: var(--primary); }
+
+    .phase-card {
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      margin-bottom: 1rem;
+      overflow: hidden;
+      background: var(--surface);
+    }
+    .phase-header {
+      display: flex;
+      align-items: center;
+      gap: .75rem;
+      padding: .875rem 1rem;
+      cursor: pointer;
+      border-bottom: 1px solid transparent;
+      transition: border-color .15s;
+      user-select: none;
+    }
+    .phase-header.open { border-color: var(--border); }
+    .phase-num {
+      width: 30px; height: 30px;
+      border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 12px; font-weight: 700;
+      flex-shrink: 0;
+      font-family: var(--font-display);
+    }
+    .phase-info { flex: 1; min-width: 0; }
+    .phase-title {
+      font-size: 13.5px; font-weight: 600;
+      color: var(--text-primary); line-height: 1.3;
+    }
+    .phase-sub { font-size: 11.5px; color: var(--text-muted); margin-top: 2px; }
+    .phase-count { font-size: 11px; color: var(--text-muted); flex-shrink: 0; }
+    .phase-chevron {
+      font-size: 20px; color: var(--text-muted);
+      flex-shrink: 0; transition: transform .2s; line-height: 1;
+      font-style: normal;
+    }
+    .phase-chevron.open { transform: rotate(180deg); }
+
+    .phase-body { display: none; }
+    .phase-body.open { display: block; }
+
+    .step-row {
+      padding: .875rem 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+    .step-row:last-child { border-bottom: none; }
+
+    .step-heading {
+      display: flex; align-items: flex-start;
+      gap: .5rem; margin-bottom: .5rem;
+    }
+    .step-icon { font-size: 16px; flex-shrink: 0; margin-top: 1px; }
+    .step-label {
+      font-size: 13.5px; font-weight: 600;
+      color: var(--text-primary); line-height: 1.35;
+    }
+    .step-what {
+      font-size: 13px; color: var(--text-secondary);
+      line-height: 1.65; margin-bottom: .625rem;
+    }
+
+    .step-pills { display: flex; flex-wrap: wrap; gap: 5px; margin-bottom: .625rem; }
+    .pill {
+      font-size: 11.5px; padding: 3px 10px;
+      border-radius: 999px; line-height: 1.5;
+    }
+    .pill-why { background: rgba(139,105,20,.1); color: var(--secondary); }
+    .pill-how { background: rgba(45,80,22,.08); color: var(--primary); }
+    .pill-when { background: rgba(52,152,219,.1); color: #2980b9; }
+
+    [data-theme="dark"] .pill-why { background: rgba(139,105,20,.2); }
+    [data-theme="dark"] .pill-how { background: rgba(45,80,22,.2); }
+    [data-theme="dark"] .pill-when { background: rgba(52,152,219,.15); color: #74b9e8; }
+
+    .tools-wrap { margin-bottom: .625rem; }
+    .tools-label {
+      font-size: 11px; color: var(--text-muted);
+      font-weight: 600; margin-bottom: 5px;
+      text-transform: uppercase; letter-spacing: .4px;
+    }
+    .tools-list { display: flex; flex-wrap: wrap; gap: 5px; }
+    .tool-chip {
+      display: inline-flex; align-items: center; gap: 4px;
+      font-size: 12px; padding: 4px 10px;
+      border-radius: 8px;
+      border: 1px solid var(--primary);
+      color: var(--primary);
+      text-decoration: none;
+      background: transparent;
+      transition: all .15s;
+      font-family: var(--font-body);
+    }
+    .tool-chip:hover { background: var(--primary); color: #fff; }
+
+    .action-box {
+      background: var(--bg, #FAFAF8);
+      border: 1px solid var(--border);
+      border-left: 3px solid var(--primary);
+      border-radius: 8px;
+      padding: .625rem .75rem;
+      margin-top: 4px;
+    }
+    [data-theme="dark"] .action-box { background: rgba(255,255,255,.03); }
+    .action-label {
+      font-size: 10.5px; font-weight: 700;
+      color: var(--primary);
+      text-transform: uppercase; letter-spacing: .5px;
+      margin-bottom: 5px;
+    }
+    .action-input {
+      width: 100%; border: none; background: transparent;
+      font-family: var(--font-body); font-size: 13px;
+      color: var(--text-primary); resize: vertical;
+      min-height: 52px; outline: none; line-height: 1.6;
+    }
+    .action-input::placeholder { color: var(--text-muted); font-style: italic; }
+
+    .bp-legend {
+      display: flex; gap: .875rem; flex-wrap: wrap;
+      margin-bottom: 1.25rem;
+    }
+    .legend-item {
+      display: flex; align-items: center; gap: 5px;
+      font-size: 12px; color: var(--text-secondary);
+    }
+    .legend-dot { width: 8px; height: 8px; border-radius: 50%; }
+
+    .save-toast {
+      position: fixed; bottom: 1.25rem; left: 50%;
+      transform: translateX(-50%) translateY(60px);
+      background: var(--primary); color: #fff;
+      font-size: 12.5px; padding: .5rem 1.25rem;
+      border-radius: 999px;
+      box-shadow: 0 4px 16px rgba(0,0,0,.15);
+      transition: transform .25s cubic-bezier(.34,1.56,.64,1);
+      z-index: 999; white-space: nowrap;
+      font-family: var(--font-body);
+    }
+    .save-toast.show { transform: translateX(-50%) translateY(0); }
+
+    .bp-bonus-badge {
+      display: inline-flex; align-items: center; gap: 5px;
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
+      color: #fff; font-size: 11px; font-weight: 600;
+      padding: 3px 12px; border-radius: 999px;
+      letter-spacing: .3px; margin-bottom: .75rem;
+    }
+  </style>
+</head>
+<body>
+<div class="reading-progress"></div>
+<div class="app-layout">
+
+  <div class="sidebar-overlay" id="sidebarOverlay"></div>
+  <aside class="sidebar" id="sidebar">
+    <div class="sidebar-header">
+      <a href="../dashboard.html" class="sidebar-logo">
+        <span class="sidebar-logo-icon">GM</span>
+        <span><span class="sidebar-logo-text">Guru Merdeka</span><span class="sidebar-logo-sub">Panduan Berkarya & Berpenghasilan</span></span>
+      </a>
+    </div>
+    <div class="sidebar-progress-row">
+      <div class="sidebar-progress-bar"><div class="sidebar-progress-fill" id="sidebarProgressFill"></div></div>
+      <span class="sidebar-progress-text" id="sidebarProgressText">0/9</span>
+    </div>
+    <nav class="sidebar-nav" id="sidebarNav"></nav>
+    <div class="sidebar-footer">
+      <button class="btn-dark-mode" id="darkModeToggle">🌙 Gelap</button>
+      <button class="btn-logout" id="logoutBtn">Keluar</button>
+    </div>
+  </aside>
+
+  <main class="main-content">
+    <header class="mobile-header">
+      <a href="../dashboard.html" class="mobile-logo">
+        <span style="width:28px;height:28px;background:linear-gradient(135deg,var(--primary),var(--secondary));border-radius:7px;display:flex;align-items:center;justify-content:center;color:white;font-family:var(--font-display);font-weight:700;font-size:12px;flex-shrink:0;">GM</span>
+        Guru Merdeka
+      </a>
+      <button class="hamburger-btn" id="sidebarToggle"><span></span><span></span><span></span></button>
+    </header>
+
+    <!-- Chapter header — sama persis dengan chapter lain -->
+    <div class="chapter-header">
+      <svg class="chapter-ornament" viewBox="0 0 44 44" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="8" y="14" width="28" height="20" rx="3" fill="#2D5016" opacity="0.1"/>
+        <rect x="12" y="10" width="20" height="4" rx="2" fill="#8B6914" opacity="0.3"/>
+        <line x1="13" y1="20" x2="31" y2="20" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="13" y1="24" x2="31" y2="24" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <line x1="13" y1="28" x2="23" y2="28" stroke="#2D5016" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+        <circle cx="33" cy="30" r="5" fill="#8B6914" opacity="0.2"/>
+        <path d="M31 30 L33 32 L36 28" stroke="#8B6914" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <div class="bp-bonus-badge">✦ Bonus Eksklusif</div>
+      <p class="chapter-number">Blueprint</p>
+      <h1 class="chapter-title">Blueprint Produk Digital</h1>
+      <div class="chapter-meta">
+        <span class="chapter-meta-item">🗺 8 Fase · 27 Langkah</span>
+        <span class="chapter-meta-item">✦ Panduan eksekusi</span>
+      </div>
+    </div>
+
+    <div class="chapter-body">
+      <div class="content-wrap">
+
+        <div class="callout tip">
+          <div class="callout-label">Untuk kamu yang sudah selesai</div>
+          <p>Kamu sudah menyelesaikan seluruh perjalanan Guru Merdeka. Sekarang saatnya eksekusi. Panduan ini menemanimu dari langkah pertama sampai produk pertamamu menghasilkan. Isi setiap kolom — jawabanmu tersimpan otomatis.</p>
+        </div>
+
+        <!-- Legend -->
+        <div class="bp-legend">
+          <div class="legend-item"><div class="legend-dot" style="background:var(--secondary)"></div> Mengapa</div>
+          <div class="legend-item"><div class="legend-dot" style="background:var(--primary)"></div> Cara</div>
+          <div class="legend-item"><div class="legend-dot" style="background:#3498db"></div> Kapan</div>
+        </div>
+
+        <!-- Filter tabs -->
+        <div class="bp-tabs" id="bpTabs">
+          <button class="bp-tab active" data-filter="all">Semua fase</button>
+          <button class="bp-tab" data-filter="0">Persiapan</button>
+          <button class="bp-tab" data-filter="1">Riset</button>
+          <button class="bp-tab" data-filter="2">Produk</button>
+          <button class="bp-tab" data-filter="3">Identitas</button>
+          <button class="bp-tab" data-filter="4">Platform</button>
+          <button class="bp-tab" data-filter="5">Konten</button>
+          <button class="bp-tab" data-filter="6">Penjualan</button>
+          <button class="bp-tab" data-filter="7">Scale</button>
+        </div>
+
+        <!-- Phase cards rendered by JS -->
+        <div id="bpPhases"></div>
+
+      </div>
+    </div>
+
+    <footer class="chapter-footer">
+      <div class="content-wrap">
+        <button class="complete-btn" id="markCompleteBtn">Tandai Blueprint Selesai ✓</button>
+        <div class="chapter-nav">
+          <a href="./epilog.html" class="chapter-nav-btn">
+            <span class="nav-dir-label">← Sebelumnya</span>
+            <span class="nav-chapter-title">Epilog: Ikhtiar 100%, Tawakkal 1000%</span>
+          </a>
+          <a href="../dashboard.html" class="chapter-nav-btn dir-next">
+            <span class="nav-dir-label">Selesai ✦</span>
+            <span class="nav-chapter-title">Kembali ke Dashboard</span>
+          </a>
+        </div>
+      </div>
+    </footer>
+
+  </main>
+</div>
+
+<!-- Completion overlay -->
+<div class="completion-overlay" id="completionOverlay">
+  <div class="completion-card">
+    <div class="completion-icon" style="font-size:26px;">✦</div>
+    <h2 class="completion-title">MasyaAllah, Selesai!</h2>
+    <p class="completion-text">Blueprint sudah di tanganmu. Langkah selanjutnya hanya satu: mulai. Bukan sempurna — tapi mulai. Barakallahu fiik.</p>
+    <div class="completion-actions">
+      <a href="../dashboard.html" class="btn-next-chapter">Kembali ke Dashboard</a>
+      <button class="btn-close-overlay" data-close-overlay>Tetap di halaman ini</button>
+    </div>
+  </div>
+</div>
+
+<!-- Save toast -->
+<div class="save-toast" id="saveToast">✓ Tersimpan</div>
+
+<script src="../js/config.js"></script>
+<script src="../js/app.js"></script>
+
+<script>
+/* ── Blueprint data ── */
+const BP = [
+  { id:0, color:'#4F46E5', bg:'#EEF2FF', tc:'#312E81', title:'Fase 0 — Persiapan mental & teknis', sub:'Fondasi sebelum melangkah', steps:[
+    { icon:'🎯', label:'Tentukan jenis produk digital', what:'Pilih salah satu: ebook/PDF, template (Notion, Canva, Word), preset/filter, video kursus, audio, software/plugin, atau bundel. Setiap jenis punya cara buat dan cara jual yang berbeda.', why:'Tanpa keputusan ini kamu akan terus memulai dan tidak pernah selesai.', how:'Tulis di kertas: "Saya akan membuat ___." Satu produk dulu, sampai selesai dan terjual.', when:'Sebelum apapun dimulai', tools:[], key:'gm-bp-f0-s1', ph:'Produk yang akan saya buat pertama: ___' },
+    { icon:'💻', label:'Buat akun wajib', what:'Email bisnis terpisah dari email pribadi, Google Account untuk Drive dan Analytics, dan akun platform pembayaran.', why:'Semua tools dan platform membutuhkan ini sebagai fondasi. Kalau belum ada kamu akan tersangkut di tengah jalan.', how:'Buat email dengan format: namamu.bisnis@gmail.com — pisahkan dari email pribadi agar lebih profesional.', when:'Hari pertama', tools:[{n:'Gmail',u:'https://gmail.com'},{n:'Google Drive',u:'https://drive.google.com'}], key:'gm-bp-f0-s2', ph:'Email bisnisku: ___' },
+    { icon:'📁', label:'Buat struktur folder kerja', what:'Lima folder utama: Riset, Desain, Produk-Final, Konten-Marketing, Keuangan.', why:'Tanpa struktur yang jelas kamu akan buang 20–30% waktumu hanya untuk mencari file.', how:'Buat di Google Drive. Di dalam Produk-Final, buat subfolder per produk.', when:'Hari pertama', tools:[{n:'Google Drive',u:'https://drive.google.com'}], key:'gm-bp-f0-s3', ph:'Status folder: sudah / belum dibuat' }
+  ]},
+  { id:1, color:'#059669', bg:'#ECFDF5', tc:'#064E3B', title:'Fase 1 — Riset', sub:'Validasi dulu, baru buat — langkah paling sering dilewati pemula', steps:[
+    { icon:'🔍', label:'Riset pasar — siapa yang akan membeli?', what:'Cari tahu: siapa target pembelimu, masalah apa yang mereka punya, apa yang sudah mereka beli sebelumnya, dan berapa harga yang mereka terima.', why:'Produk yang dibuat tanpa riset sering tidak laku. Bukan karena jelek — tapi karena tidak ada yang merasa butuh.', how:'Masuk ke grup Facebook, komentar YouTube, atau forum niche-mu. Catat kalimat keluhan atau pertanyaan yang sering muncul. Kata-kata mereka adalah ide produkmu.', when:'Sebelum membuat apapun', tools:[{n:'Facebook Groups',u:'https://facebook.com/groups'},{n:'Reddit',u:'https://reddit.com'},{n:'YouTube',u:'https://youtube.com'},{n:'Quora',u:'https://quora.com'}], key:'gm-bp-f1-s1', ph:'3 masalah terbesar target pasarku:\n1. ___\n2. ___\n3. ___' },
+    { icon:'📈', label:'Riset tren — apakah topik ini sedang naik?', what:'Cek apakah topik produkmu sedang populer, mulai naik, atau justru menurun. Lebih baik masuk ke pasar yang sedang naik.', why:'Menjual produk di topik yang sedang tren = lebih mudah ditemukan dan lebih mudah viral secara organik.', how:'Ketik topik produkmu di Google Trends. Pilih rentang 12 bulan. Cari yang grafiknya naik atau stabil tinggi.', when:'Bersamaan dengan riset pasar', tools:[{n:'Google Trends',u:'https://trends.google.com'},{n:'Exploding Topics',u:'https://explodingtopics.com'},{n:'Answer The Public',u:'https://answerthepublic.com'}], key:'gm-bp-f1-s2', ph:'Tren topikku: naik / stabil / turun\nCatatan: ___' },
+    { icon:'🏆', label:'Riset kompetitor — belajar dari yang sudah ada', what:'Cari 3–5 produk serupa yang sudah ada. Pelajari apa yang mereka jual, berapa harganya, dan apa kekurangan mereka (baca ulasan bintang 1–3).', why:'Kompetitor yang sudah sukses membuktikan bahwa pasar ada. Tugasmu cukup buat yang lebih baik atau berbeda sudut pandangnya.', how:'Cari di Tokopedia atau Gumroad. Baca semua ulasan negatif — itu adalah brief produkmu yang gratis.', when:'Sebelum menentukan format produk', tools:[{n:'Tokopedia',u:'https://tokopedia.com'},{n:'Gumroad',u:'https://gumroad.com'},{n:'TikTok Search',u:'https://www.tiktok.com/search'}], key:'gm-bp-f1-s3', ph:'Kekurangan kompetitor yang akan kuisi: ___' },
+    { icon:'🔑', label:'Riset kata kunci — bagaimana orang mencari?', what:'Cari kata-kata yang diketik orang di Google saat mencari solusi yang produkmu selesaikan.', why:'Jika tidak tahu kata kunci yang dipakai pembeli, produkmu tidak akan ditemukan — sebagus apapun isinya.', how:'Masuk ke Google Keyword Planner. Ketik topikmu. Catat 5–10 kata kunci dengan volume tinggi dan persaingan rendah-sedang.', when:'Setelah riset pasar dan tren', tools:[{n:'Google Keyword Planner',u:'https://ads.google.com/home/tools/keyword-planner/'},{n:'Ubersuggest',u:'https://neilpatel.com/ubersuggest/'},{n:'Ahrefs Free',u:'https://ahrefs.com/keyword-generator'}], key:'gm-bp-f1-s4', ph:'5 kata kunci utamaku:\n1. ___\n2. ___\n3. ___\n4. ___\n5. ___' }
+  ]},
+  { id:2, color:'#DC2626', bg:'#FEF2F2', tc:'#7F1D1D', title:'Fase 2 — Membuat produk', sub:'Buat sekali, jual berkali-kali', steps:[
+    { icon:'📐', label:'Tentukan format & outline produk', what:'Buat kerangka isi produk sebelum mulai mengerjakan. Untuk ebook: daftar bab. Untuk template: daftar halaman. Untuk kursus: daftar modul.', why:'Tanpa outline kamu akan kebingungan di tengah pengerjaan dan hasilnya tidak terstruktur.', how:'Bayangkan pembeli yang baru saja membeli — apa yang perlu mereka pelajari dari awal sampai akhir? Tulis itu berurutan.', when:'Sebelum mulai produksi', tools:[{n:'Google Docs',u:'https://docs.google.com'},{n:'Notion',u:'https://notion.so'}], key:'gm-bp-f2-s1', ph:'Outline produkku:\n1. ___\n2. ___\n3. ___' },
+    { icon:'🎨', label:'Buat produk dengan tools yang tepat', what:'Pilih tools sesuai jenis produk: Canva untuk ebook/template visual, Notion untuk template digital, CapCut/DaVinci untuk video.', why:'Tools yang tepat membuat produk terlihat profesional tanpa perlu jago desain dari nol.', how:'Mulai dari template yang sudah ada di Canva atau Notion. Modifikasi warna, font, dan isi sesuai niche-mu.', when:'Setelah outline selesai', tools:[{n:'Canva',u:'https://canva.com'},{n:'Notion',u:'https://notion.so'},{n:'CapCut',u:'https://capcut.com'},{n:'Google Slides',u:'https://slides.google.com'}], key:'gm-bp-f2-s2', ph:'Tools yang kupakai: ___\nProgress: ___%' },
+    { icon:'✅', label:'Review & uji coba produk', what:'Sebelum dijual, minta 2–3 orang dari target pasarmu untuk mencoba. Tanyakan: apakah mudah dipahami? Apa yang membingungkan? Apakah hasilnya sepadan?', why:'Kamu terlalu dekat dengan produkmu sendiri. Orang lain akan menemukan masalah yang tidak kamu lihat.', how:'Bagikan gratis ke 2–3 kenalan yang sesuai target pasar. Minta feedback jujur melalui form sederhana.', when:'Setelah produk selesai dibuat', tools:[{n:'Google Forms',u:'https://forms.google.com'}], key:'gm-bp-f2-s3', ph:'Feedback utama yang perlu diperbaiki:\n1. ___\n2. ___' },
+    { icon:'📦', label:'Kemas produk untuk dijual', what:'Siapkan: file produk final (PDF/ZIP/link), deskripsi produk menarik, dan gambar thumbnail yang profesional.', why:'Kemasan yang baik meningkatkan persepsi nilai. Produk yang sama bisa dijual lebih mahal jika dikemas dengan baik.', how:'Ekspor ke format yang mudah diakses pembeli. Buat cover/thumbnail di Canva — gunakan template yang sudah a
