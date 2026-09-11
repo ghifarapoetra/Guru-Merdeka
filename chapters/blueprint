@@ -327,4 +327,114 @@ const BP = [
     { icon:'📐', label:'Tentukan format & outline produk', what:'Buat kerangka isi produk sebelum mulai mengerjakan. Untuk ebook: daftar bab. Untuk template: daftar halaman. Untuk kursus: daftar modul.', why:'Tanpa outline kamu akan kebingungan di tengah pengerjaan dan hasilnya tidak terstruktur.', how:'Bayangkan pembeli yang baru saja membeli — apa yang perlu mereka pelajari dari awal sampai akhir? Tulis itu berurutan.', when:'Sebelum mulai produksi', tools:[{n:'Google Docs',u:'https://docs.google.com'},{n:'Notion',u:'https://notion.so'}], key:'gm-bp-f2-s1', ph:'Outline produkku:\n1. ___\n2. ___\n3. ___' },
     { icon:'🎨', label:'Buat produk dengan tools yang tepat', what:'Pilih tools sesuai jenis produk: Canva untuk ebook/template visual, Notion untuk template digital, CapCut/DaVinci untuk video.', why:'Tools yang tepat membuat produk terlihat profesional tanpa perlu jago desain dari nol.', how:'Mulai dari template yang sudah ada di Canva atau Notion. Modifikasi warna, font, dan isi sesuai niche-mu.', when:'Setelah outline selesai', tools:[{n:'Canva',u:'https://canva.com'},{n:'Notion',u:'https://notion.so'},{n:'CapCut',u:'https://capcut.com'},{n:'Google Slides',u:'https://slides.google.com'}], key:'gm-bp-f2-s2', ph:'Tools yang kupakai: ___\nProgress: ___%' },
     { icon:'✅', label:'Review & uji coba produk', what:'Sebelum dijual, minta 2–3 orang dari target pasarmu untuk mencoba. Tanyakan: apakah mudah dipahami? Apa yang membingungkan? Apakah hasilnya sepadan?', why:'Kamu terlalu dekat dengan produkmu sendiri. Orang lain akan menemukan masalah yang tidak kamu lihat.', how:'Bagikan gratis ke 2–3 kenalan yang sesuai target pasar. Minta feedback jujur melalui form sederhana.', when:'Setelah produk selesai dibuat', tools:[{n:'Google Forms',u:'https://forms.google.com'}], key:'gm-bp-f2-s3', ph:'Feedback utama yang perlu diperbaiki:\n1. ___\n2. ___' },
-    { icon:'📦', label:'Kemas produk untuk dijual', what:'Siapkan: file produk final (PDF/ZIP/link), deskripsi produk menarik, dan gambar thumbnail yang profesional.', why:'Kemasan yang baik meningkatkan persepsi nilai. Produk yang sama bisa dijual lebih mahal jika dikemas dengan baik.', how:'Ekspor ke format yang mudah diakses pembeli. Buat cover/thumbnail di Canva — gunakan template yang sudah a
+    { icon:'📦', label:'Kemas produk untuk dijual', what:'Siapkan: file produk final (PDF/ZIP/link), deskripsi produk menarik, dan gambar thumbnail yang profesional.', why:'Kemasan yang baik meningkatkan persepsi nilai. Produk yang sama bisa dijual lebih mahal jika dikemas dengan baik.', how:'Ekspor ke format yang mudah diakses pembeli. Buat cover/thumbnail di Canva — gunakan template yang sudah ada.', when:'Sebelum setup platform penjualan', tools:[{n:'Canva',u:'https://canva.com'},{n:'Smallpdf',u:'https://smallpdf.com'}], key:'gm-bp-f2-s4', ph:'Format file final: ___\nUkuran file: ___' }
+  ]},
+  { id:3, color:'#DB2777', bg:'#FDF2F8', tc:'#831843', title:'Fase 3 — Identitas & branding', sub:'Agar mudah dikenali dan dipercaya', steps:[
+    { icon:'🏷️', label:'Tentukan nama brand & produk', what:'Nama yang mudah diingat, mudah diucapkan, dan relevan dengan niche. Tidak harus kreatif — yang terpenting mudah dicari.', why:'Nama yang baik membantu orang mengingat dan merekomendasikanmu kepada orang lain.', how:'Brainstorm 10 nama. Cek di Google dan Instagram apakah sudah dipakai. Pilih yang belum ada.', when:'Setelah produk selesai di-outline', tools:[{n:'Namechk',u:'https://namechk.com'}], key:'gm-bp-f3-s1', ph:'Nama brandku: ___\nNama produkku: ___' },
+    { icon:'🎨', label:'Buat identitas visual dasar', what:'Logo sederhana, 2 warna utama, dan 1 font yang konsisten dipakai di semua konten.', why:'Visual yang konsisten membangun kepercayaan. Orang yang sering melihat tampilan yang sama akan lebih mudah percaya.', how:'Di Canva, pilih 2 warna dan 1 font. Gunakan kombinasi yang sama di semua konten — konsistensi lebih penting dari kerumitan.', when:'Bersamaan dengan persiapan platform', tools:[{n:'Canva',u:'https://canva.com'},{n:'Coolors',u:'https://coolors.co'},{n:'Google Fonts',u:'https://fonts.google.com'}], key:'gm-bp-f3-s2', ph:'Warna utamaku: ___\nFont: ___' }
+  ]},
+  { id:4, color:'#2563EB', bg:'#EFF6FF', tc:'#1E3A8A', title:'Fase 4 — Platform penjualan & media sosial', sub:'Tempat jualan dan tempat promosi', steps:[
+    { icon:'🛒', label:'Pilih & setup platform penjualan', what:'Platform untuk menerima pembayaran dan kirim produk otomatis. Pilihan: Gumroad (paling mudah untuk pemula), Trakteer, atau Lynk.id untuk pasar lokal.', why:'Tanpa platform kamu harus proses pesanan manual — tidak scalable dan rawan human error.', how:'Daftar di Gumroad (gratis). Isi profil, upload produk, set harga, aktifkan pembayaran.', when:'Setelah produk siap dikemas', tools:[{n:'Gumroad',u:'https://gumroad.com'},{n:'Trakteer',u:'https://trakteer.id'},{n:'Lynk.id',u:'https://lynk.id'},{n:'Tokopedia',u:'https://tokopedia.com'}], key:'gm-bp-f4-s1', ph:'Platform penjualanku: ___\nLink produk: ___' },
+    { icon:'📱', label:'Pilih & setup satu media sosial utama', what:'Pilih SATU platform dulu. Jangan tersebar. Instagram untuk visual, TikTok untuk jangkauan organik, YouTube untuk edukasi panjang.', why:'Pemula yang fokus di satu platform jauh lebih cepat berkembang daripada yang menyebar ke mana-mana.', how:'Pilih platform di mana target pembelimu paling banyak. Setup profil: foto profesional dan bio yang jelas.', when:'Bersamaan dengan platform penjualan', tools:[{n:'Instagram',u:'https://instagram.com'},{n:'TikTok',u:'https://tiktok.com'},{n:'YouTube',u:'https://youtube.com'}], key:'gm-bp-f4-s2', ph:'Platform utamaku: ___\nHandle: @___' },
+    { icon:'🔗', label:'Buat link hub (satu link, semua tujuan)', what:'Satu halaman yang berisi semua link penting: produk, media sosial, cara order. Ini yang ditaruh di bio semua platform.', why:'Setiap platform hanya izinkan 1 link di bio. Link hub memungkinkan kamu arahkan ke banyak tempat sekaligus.', how:'Daftar di Lynk.id. Tambahkan: link produk, Instagram, WhatsApp untuk order.', when:'Sebelum mulai posting konten', tools:[{n:'Lynk.id',u:'https://lynk.id'},{n:'Linktree',u:'https://linktr.ee'}], key:'gm-bp-f4-s3', ph:'Link bio-hub-ku: ___' },
+    { icon:'📧', label:'Setup email list (mulai dari sekarang)', what:'Kumpulkan email calon pembeli dari awal. Email list adalah aset jangka panjang yang tidak bergantung pada algoritma platform manapun.', why:'Follower bisa hilang kapan saja jika platform berubah kebijakan. Email list adalah milikmu selamanya.', how:'Daftar di Mailchimp (gratis sampai 500 subscriber). Buat satu email sambutan otomatis.', when:'Segera setelah platform penjualan aktif', tools:[{n:'Mailchimp',u:'https://mailchimp.com'},{n:'Kit',u:'https://kit.com'}], key:'gm-bp-f4-s4', ph:'Jumlah subscriber emailku saat ini: ___' }
+  ]},
+  { id:5, color:'#16A34A', bg:'#F0FDF4', tc:'#14532D', title:'Fase 5 — Konten & pemasaran organik', sub:'Cara dapat pembeli tanpa iklan', steps:[
+    { icon:'📅', label:'Buat kalender konten', what:'Rencanakan topik konten untuk 2–4 minggu ke depan. Setiap konten harus punya tujuan: edukasi, bangun kepercayaan, atau dorong pembelian.', why:'Konsistensi adalah kunci algoritma. Posting 3x seminggu secara konsisten lebih efektif dari 10 konten sekaligus lalu berhenti.', how:'Gunakan rumus 70-20-10: 70% konten edukatif, 20% testimoni/behind the scene, 10% promosi produk.', when:'Sebelum mulai posting, diperbarui tiap bulan', tools:[{n:'Google Sheets',u:'https://sheets.google.com'},{n:'Notion',u:'https://notion.so'}], key:'gm-bp-f5-s1', ph:'Jadwal postingku: ___ per minggu\nHari posting: ___' },
+    { icon:'✍️', label:'Kuasai menulis hook yang menghentikan scroll', what:'3 detik pertama menentukan apakah orang berhenti atau terus scroll. Hook yang kuat dimulai dengan masalah, pertanyaan provokatif, atau angka mengejutkan.', why:'Konten terbaik sekalipun tidak akan dibaca jika openingnya membosankan.', how:'Template: "Kalau kamu [masalah target], ini yang harus kamu tahu..." atau "Saya habiskan [X] untuk belajar ini, supaya kamu tidak perlu."', when:'Setiap kali membuat konten', tools:[{n:'Claude',u:'https://claude.ai'},{n:'ChatGPT',u:'https://chat.openai.com'}], key:'gm-bp-f5-s2', ph:'Template hook andalanku: ___' },
+    { icon:'🏷️', label:'Strategi hashtag & SEO konten', what:'Campuran 3 hashtag besar (1M+ postingan), 5 sedang (100K–1M), 5 niche (di bawah 100K). Masukkan kata kunci ke judul dan deskripsi konten berbasis teks.', why:'Hashtag dan kata kunci membantu kontenmu ditemukan orang yang belum mengenalmu sama sekali.', how:'Buat 3 set hashtag berbeda sesuai topik kontenmu. Rotasi penggunaannya setiap posting.', when:'Setiap kali posting', tools:[{n:'All Hashtag',u:'https://all-hashtag.com'},{n:'Flick',u:'https://flick.tech'}], key:'gm-bp-f5-s3', ph:'Set hashtag niche-ku:\n#___  #___  #___' },
+    { icon:'🎁', label:'Buat lead magnet (produk gratis pemancing)', what:'Versi mini gratis dari produkmu. Jika jual ebook 100 halaman, buat PDF 5 halaman gratis. Minta email sebagai tukarannya.', why:'Orang lebih mudah memberikan email daripada uang. Setelah masuk email list, peluang beli jauh lebih tinggi.', how:'Ambil 1 bab terbaik dari produk utama. Ekspor ke PDF. Setup pengiriman otomatis via Mailchimp.', when:'Bersamaan dengan konten pertama', tools:[{n:'Canva',u:'https://canva.com'},{n:'Mailchimp',u:'https://mailchimp.com'}], key:'gm-bp-f5-s4', ph:'Lead magnetku: ___\nLink unduh: ___' }
+  ]},
+  { id:6, color:'#D97706', bg:'#FFFBEB', tc:'#78350F', title:'Fase 6 — Penjualan & konversi', sub:'Ubah penonton jadi pembeli', steps:[
+    { icon:'💬', label:'Tulis deskripsi produk yang menjual', what:'Deskripsi produk bukan tentang fitur — tapi tentang transformasi. Bukan "ebook 50 halaman" tapi "setelah baca ini, kamu bisa [hasil nyata] meskipun [hambatan]."', why:'Pembeli membeli hasil, bukan produk. Tunjukkan kehidupan mereka setelah membeli.', how:'Gunakan struktur: Masalah → Solusi → Apa yang didapat → Siapa yang cocok → Harga → Ajakan beli.', when:'Saat setup halaman produk', tools:[{n:'Claude',u:'https://claude.ai'},{n:'Hemingway',u:'https://hemingwayapp.com'}], key:'gm-bp-f6-s1', ph:'Satu kalimat transformasi produkku:\n"Setelah ___, kamu bisa ___ meskipun ___."' },
+    { icon:'💰', label:'Tentukan harga dengan benar', what:'Patokan untuk Indonesia: ebook pemula Rp35K–75K, template Rp50K–150K, kursus Rp100K–500K. Jangan hargai terlalu murah.', why:'Harga adalah sinyal kualitas. Harga terlalu rendah membuat pembeli bertanya-tanya ada apa.', how:'Lihat harga kompetitor. Kalikan biaya produksi dengan 10–20x untuk harga awal. Uji dan sesuaikan.', when:'Sebelum launch', tools:[{n:'Tokopedia (riset harga)',u:'https://tokopedia.com'}], key:'gm-bp-f6-s2', ph:'Harga produkku: Rp___\nAlasan penetapan harga ini: ___' },
+    { icon:'🚀', label:'Launch pertama — buat momentum', what:'Umumkan 3–5 hari sebelumnya, tawarkan harga early bird (lebih murah 20–30%), dan minta dukungan orang terdekat untuk reshare.', why:'Penjualan dan engagement di hari pertama mempengaruhi seberapa banyak algoritma mendistribusikan kontenmu.', how:'Hari -5: umumkan. Hari -3: tease konten. Hari -1: countdown. Hari H: launch + update tiap jam. Hari +1: tampilkan feedback awal.', when:'Saat produk dan platform siap', tools:[{n:'Instagram Stories',u:'https://instagram.com'},{n:'WhatsApp Broadcast',u:'https://whatsapp.com'}], key:'gm-bp-f6-s3', ph:'Tanggal launchku: ___\nTarget penjualan hari pertama: ___' },
+    { icon:'⭐', label:'Kumpulkan & tampilkan testimoni', what:'Setelah 5–10 pembeli pertama, minta feedback tertulis atau screenshot. Tampilkan di halaman produk dan konten media sosial.', why:'Testimoni menghilangkan keraguan calon pembeli. Ini adalah alat penjualan paling kuat yang tidak perlu dibayar.', how:'Kirim pesan personal ke pembeli awal. Tanya: "Apa yang paling membantu dari produk ini? Boleh saya tampilkan?"', when:'Setelah penjualan pertama', tools:[{n:'Canva (kartu testimoni)',u:'https://canva.com'}], key:'gm-bp-f6-s4', ph:'Testimoni pertama yang kudapat: ___' }
+  ]},
+  { id:7, color:'#7C3AED', bg:'#F5F3FF', tc:'#4C1D95', title:'Fase 7 — Analisis & scale', sub:'Tumbuh berdasarkan data, bukan tebak-tebakan', steps:[
+    { icon:'📊', label:'Pasang & baca analytics', what:'Lacak: berapa orang melihat halaman produkmu, berapa yang beli (conversion rate), konten mana yang paling banyak mengirim pembeli, dan dari mana mereka datang.', why:'Tanpa data kamu tidak tahu apa yang bekerja. Kamu akan terus membuang waktu di tempat yang salah.', how:'Di Gumroad, baca dashboard analytics. Catat data tiap minggu di spreadsheet sederhana.', when:'Segera setelah launch, review mingguan', tools:[{n:'Google Analytics',u:'https://analytics.google.com'},{n:'Google Sheets',u:'https://sheets.google.com'}], key:'gm-bp-f7-s1', ph:'Conversion rate saat ini: ___%\nSumber traffic terbesar: ___' },
+    { icon:'🔁', label:'Perkuat yang sudah terbukti bekerja', what:'Cari pola: konten jenis apa yang paling banyak menghasilkan penjualan? Platform mana paling efektif? Perkuat itu, bukan yang belum terbukti.', why:'Lebih efisien memperkuat yang sudah terbukti daripada terus bereksperimen dari nol.', how:'Ambil 3 konten terbaikmu. Buat 5 variasi dari masing-masing. Ulangi format yang paling sering berhasil.', when:'Setelah 30 hari pertama berjalan', tools:[{n:'Meta Business Suite',u:'https://business.facebook.com'},{n:'TikTok Studio',u:'https://studio.tiktok.com'}], key:'gm-bp-f7-s2', ph:'Format konten terbaikku: ___\nPlatform terbaikku: ___' },
+    { icon:'➕', label:'Tambah produk atau buat versi premium', what:'Setelah produk pertama berjalan, buat: produk versi premium dengan harga lebih tinggi, bundel beberapa produk, atau produk lanjutan untuk pembeli yang sudah puas.', why:'Lebih mudah menjual ke pembeli yang sudah percaya daripada mencari pembeli baru terus-menerus.', how:'Tanya pembeli: "Setelah menggunakan [produk], tantangan apa yang kamu hadapi berikutnya?" Buat produk yang menjawab itu.', when:'Setelah 50+ penjualan pertama', tools:[{n:'Google Forms',u:'https://forms.google.com'}], key:'gm-bp-f7-s3', ph:'Ide produk keduaku: ___' },
+    { icon:'📣', label:'Pertimbangkan iklan berbayar', what:'Jika sudah ada bukti penjualan organik dan margin cukup, pertimbangkan Meta Ads atau TikTok Ads untuk memperbesar jangkauan.', why:'Iklan mempercepat pertumbuhan — tapi hanya efektif jika produk dan halamanmu sudah terbukti mengkonversi secara organik.', how:'Mulai dengan budget kecil (Rp50K–100K/hari). Gunakan konten organik terbaikmu sebagai materi iklan. Uji 2–3 versi sekaligus.', when:'Setelah ada penjualan organik yang konsisten', tools:[{n:'Meta Ads Manager',u:'https://adsmanager.facebook.com'},{n:'TikTok Ads',u:'https://ads.tiktok.com'}], key:'gm-bp-f7-s4', ph:'Budget iklan pertamaku: Rp___ per hari' }
+  ]}
+];
+
+function renderStep(s) {
+  const tools = s.tools.length ? `
+    <div class="tools-wrap">
+      <div class="tools-label">Tools</div>
+      <div class="tools-list">${s.tools.map(t=>`<a href="${t.u}" class="tool-chip" target="_blank" rel="noopener">↗ ${t.n}</a>`).join('')}</div>
+    </div>` : '';
+  return `
+    <div class="step-row">
+      <div class="step-heading"><span class="step-icon">${s.icon}</span><div class="step-label">${s.label}</div></div>
+      <div class="step-what">${s.what}</div>
+      <div class="step-pills"><span class="pill pill-why">Mengapa: ${s.why}</span></div>
+      <div class="step-pills">
+        <span class="pill pill-how">Cara: ${s.how}</span>
+        <span class="pill pill-when">Kapan: ${s.when}</span>
+      </div>
+      ${tools}
+      <div class="action-box">
+        <div class="action-label">✏ Isimu di sini</div>
+        <textarea class="action-input" data-key="${s.key}" placeholder="${s.ph}" rows="3" oninput="saveInput(this)"></textarea>
+      </div>
+    </div>`;
+}
+
+function renderPhases(filter) {
+  const cont = document.getElementById('bpPhases');
+  const list = filter === 'all' ? BP : BP.filter(p => p.id === parseInt(filter));
+  cont.innerHTML = list.map(p => `
+    <div class="phase-card">
+      <div class="phase-header${filter!=='all'?' open':''}" id="ph-${p.id}" onclick="toggle(${p.id})">
+        <div class="phase-num" style="background:${p.bg};color:${p.tc}">${p.id}</div>
+        <div class="phase-info">
+          <div class="phase-title">${p.title}</div>
+          <div class="phase-sub">${p.sub}</div>
+        </div>
+        <span class="phase-count">${p.steps.length} langkah</span>
+        <span class="phase-chevron${filter!=='all'?' open':''}" id="chev-${p.id}">⌄</span>
+      </div>
+      <div class="phase-body${filter!=='all'?' open':''}" id="pb-${p.id}">
+        ${p.steps.map(renderStep).join('')}
+      </div>
+    </div>`).join('');
+  restore();
+}
+
+function toggle(id) {
+  document.getElementById('pb-'+id).classList.toggle('open');
+  document.getElementById('ph-'+id).classList.toggle('open');
+  document.getElementById('chev-'+id).classList.toggle('open');
+}
+
+document.getElementById('bpTabs').addEventListener('click', e => {
+  const btn = e.target.closest('.bp-tab');
+  if (!btn) return;
+  document.querySelectorAll('.bp-tab').forEach(t => t.classList.remove('active'));
+  btn.classList.add('active');
+  renderPhases(btn.dataset.filter);
+});
+
+let toastT;
+function saveInput(el) {
+  localStorage.setItem(el.dataset.key, el.value);
+  const toast = document.getElementById('saveToast');
+  toast.classList.add('show');
+  clearTimeout(toastT);
+  toastT = setTimeout(() => toast.classList.remove('show'), 1800);
+}
+
+function restore() {
+  document.querySelectorAll('.action-input[data-key]').forEach(el => {
+    const v = localStorage.getItem(el.dataset.key);
+    if (v) el.value = v;
+  });
+}
+
+renderPhases('all');
+initChapter('blueprint');
+</script>
+</body>
+</html>
