@@ -1,5 +1,5 @@
 const GM_CONFIG = {
-  password: 'gurumerdeka2024',
+  password: 'GMJAYA26',
 
   chapters: [
     { id: 'prolog',    label: 'Prolog',     title: 'Dari Tanggal 25 ke Tanggal 25',      time: '10 menit', file: 'prolog.html'    },
