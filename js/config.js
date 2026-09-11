@@ -12,7 +12,7 @@ const GM_CONFIG = {
     { id: 'epilog',    label: 'Epilog',     title: 'Ikhtiar 100%, Tawakkal 1000%',       time: '10 menit', file: 'epilog.html'    },
 
     // ── BONUS — hanya terbuka setelah epilog selesai ──
-    { id: 'blueprint', label: '✦ Blueprint', title: 'Blueprint Produk Digital',          time: 'Panduan eksekusi', file: 'chapters/blueprint.html', bonus: true },
+    { id: 'blueprint', label: '✦ Blueprint', title: 'Blueprint Produk Digital', time: 'Panduan eksekusi', file: 'blueprint.html', bonus: true },
   ],
 
   quotes: [
