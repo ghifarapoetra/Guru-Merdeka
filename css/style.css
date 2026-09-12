@@ -261,39 +261,12 @@ textarea, input { font-family: var(--font-body); }
 }
 
 .sidebar-footer {
-  padding: 10px 20px 14px;
+  padding: 14px 20px;
   border-top: 1px solid var(--border);
-  flex-shrink: 0;
-}
-
-.sidebar-community {
-  display: flex;
-  gap: 6px;
-  margin-bottom: 10px;
-}
-
-.sidebar-community-btn {
-  flex: 1;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 5px;
-  padding: 7px 6px;
-  border-radius: 9px;
-  font-size: 11px;
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity var(--transition-fast);
-  font-family: var(--font-body);
-}
-.sidebar-community-btn:hover { opacity: .82; }
-.sidebar-community-btn.wa { background: #25D366; color: #fff; }
-.sidebar-community-btn.tg { background: #2AABEE; color: #fff; }
-
-.sidebar-footer-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  flex-shrink: 0;
 }
 
 .btn-dark-mode {
@@ -1196,11 +1169,6 @@ textarea, input { font-family: var(--font-body); }
 .card-status.available { background: rgba(139,105,20,0.1); color: var(--secondary); }
 .card-status.locked    { background: var(--bg-alt); color: var(--text-muted); }
 
-.chapter-card.bonus {
-  border-color: var(--secondary);
-  background: linear-gradient(135deg, var(--surface) 80%, rgba(139,105,20,0.06));
-}
-
 /* =====================
    LOGIN PAGE
    ===================== */
@@ -1480,4 +1448,41 @@ textarea, input { font-family: var(--font-body); }
   .chapter-body { padding: 0 !important; }
   body { background: white !important; color: black !important; }
   .quote-box, .hadis-box, .reflection-box { break-inside: avoid; }
+}
+
+/* =====================
+   SIDEBAR COMMUNITY LINKS
+   ===================== */
+.sidebar-community {
+  display: flex;
+  gap: 6px;
+  padding: 10px 20px 8px;
+  border-bottom: 1px solid var(--border);
+}
+.sidebar-community-btn {
+  flex: 1;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  padding: 7px 6px;
+  border-radius: 9px;
+  font-size: 11px;
+  font-weight: 600;
+  text-decoration: none;
+  transition: opacity 0.15s;
+  font-family: var(--font-body);
+}
+.sidebar-community-btn:hover { opacity: 0.82; color: #fff; }
+.sidebar-community-btn.wa { background: #25D366; color: #fff; }
+.sidebar-community-btn.tg { background: #2AABEE; color: #fff; }
+.sidebar-footer-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px 14px;
+}
+.chapter-card.bonus {
+  border-color: var(--secondary);
+  background: linear-gradient(135deg, var(--surface) 80%, rgba(139,105,20,0.05));
 }
