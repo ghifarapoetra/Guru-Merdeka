@@ -142,7 +142,15 @@ const GM_Sidebar = {
       else if (unlocked)  { statusClass = 's-open';   statusIcon = '○';  }
 
       const a = document.createElement(unlocked ? 'a' : 'span');
-      if (unlocked) a.href = chapterUrl(ch.file);
+      const url = chapterUrl(ch.file);
+      if (unlocked) {
+        a.href = url;
+        // Fix mobile tap on sidebar
+        a.addEventListener('touchend', function(e) {
+          e.preventDefault();
+          window.location.href = url;
+        }, { passive: false });
+      }
       a.className = 'sidebar-nav-item'
         + (isCurrent ? ' active' : '')
         + (!unlocked ? ' locked' : '');
@@ -385,14 +393,28 @@ function initDashboard() {
   GM_CONFIG.chapters.forEach(ch => {
     const done      = GM_Progress.isDone(ch.id);
     const unlocked  = GM_Progress.isUnlocked(ch.id);
+    const isBonus   = !!ch.bonus;
+
     let statusLabel = '🔒 Terkunci';
     let statusClass = 'locked';
     if (done)          { statusLabel = '✓ Selesai';   statusClass = 'done'; }
-    else if (unlocked) { statusLabel = '▶ Baca';       statusClass = 'available'; }
+    else if (unlocked) { statusLabel = isBonus ? '✦ Buka Blueprint' : '▶ Baca'; statusClass = 'available'; }
+
+    const url = './chapters/' + ch.file;
 
     const cardEl = document.createElement(unlocked ? 'a' : 'div');
-    if (unlocked) cardEl.href = './chapters/' + ch.file;
-    cardEl.className = 'chapter-card' + (done ? ' completed' : '') + (!unlocked ? ' locked' : '');
+    if (unlocked) {
+      cardEl.href = url;
+      // Fix mobile tap — explicit touch handler
+      cardEl.addEventListener('touchend', function(e) {
+        e.preventDefault();
+        window.location.href = url;
+      }, { passive: false });
+    }
+    cardEl.className = 'chapter-card'
+      + (done ? ' completed' : '')
+      + (!unlocked ? ' locked' : '')
+      + (isBonus ? ' bonus' : '');
     cardEl.innerHTML = `
       <span class="card-label">${ch.label}</span>
       <span class="card-title">${ch.title}</span>
